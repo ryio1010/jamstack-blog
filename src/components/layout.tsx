@@ -1,37 +1,12 @@
-import Head from "next/head";
-import Link from "next/link"
-
-const Layout = (props: { title: string; children: any; }) => {
-    const {title, children} = props
-    const blogTitle: string = "TechBlog"
-
-
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+// @ts-ignore
+export default function Layout({ children }) {
     return (
-        <div className="page">
-            <Head>
-                <title>{title ? `${title} | ${blogTitle}` : blogTitle}</title>
-            </Head>
-
-            <header>
-                <h1 className="site-title">
-                    <Link href="/">
-                        {blogTitle}
-                    </Link>
-                </h1>
-            </header>
-
-            <main>
-                {title ? <h1 className="page-title">{title}</h1> : ``}
-                <div className="page-main">
-                    {children}
-                </div>
-            </main>
-
-            <footer>
-                &copy; {blogTitle}
-            </footer>
+        <div className="flex flex-col min-h-screen">
+            <Header />
+            <main className="flex-1 max-w-4xl w-full mx-auto">{children}</main>
+            <Footer />
         </div>
-    )
+    );
 }
-
-export default Layout

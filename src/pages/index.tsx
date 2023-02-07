@@ -1,9 +1,3 @@
-import Layout from "@/components/layout";
-
 export default function Home() {
-    return (
-        <Layout title="ホーム">
-            <div>Childrenです。</div>
-        </Layout>
-    )
+    return <div className="my-8">コンテンツ</div>;
 }

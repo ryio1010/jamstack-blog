@@ -1,4 +1,4 @@
-import Layout from '../components/layout';
+import Layout from '../components/templates/layout';
 import '../styles/globals.css';
 
 type Props = {

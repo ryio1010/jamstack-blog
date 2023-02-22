@@ -1,8 +1,7 @@
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import Header from "@/components/organisms/header";
 import React from "react";
 import Head from "next/head";
-import TopNavigation from "@/components/top_navigation";
+import BottomNavigation from "@/components/organisms/bottom_navigation";
 
 type Props = {
     children?: React.ReactNode
@@ -18,9 +17,8 @@ export default function Layout({children, title, description}: Props) {
                 <meta name="description" content={description || 'ホームページ説明'}/>
             </Head>
             <Header/>
-            <TopNavigation/>
             <main className="flex-1 max-w-4xl w-full mx-auto">{children}</main>
-            <Footer/>
+            <BottomNavigation/>
         </div>
     );
 }
